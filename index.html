@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body { background-color: rgb(248, 251, 254); }
+        .Eimee {
+            background-color: rgb(249, 252, 255);
+            border-radius: 25px;
+            height: 600px;
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 20px;
+            color: rgb(237, 237, 255);
+            font-weight: bold;
+            font-size: 25px;
+        }
+        input { padding: 10px; font-size: 18px; text-align: center; border-radius: 5px; border: 1px solid #fff3f3; }
+        .btn{
+            width: 100px;
+            height: 50px;
+            color: rgb(245, 248, 255);
+            background-color: rgb(248, 249, 255);
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="Eimee">
+        <h1>Log in</h1>
+        <form id="loginForm">
+            <p>Username</p>
+            <input type="text" id="Name" class="">
+            <p>Password</p>
+            <input type="password" id="Passy">
+            <br><br>
+            
+            <input type="checkbox" id="apple" onclick="toggleYummy()">
+            <label for="apple">Remember my info</label>
+            
+            <p id="M" style="color: rgb(230, 239, 255); font-size: 20px; height: 30px;"></p>
+            
+            <button type="button" class="btn btn-success" id="A" onclick="LoginFunction()">Login</button>
+            <button type="reset" class="btn btn-secondary" onclick="document.getElementById('M').innerHTML=''">Clear all</button>
+        </form>
+    </div>
 
+    <script>
+        
+        let attempt_counter = 0;
+
+        function toggleYummy() {
+            let isChecked = document.getElementById("apple").checked;
+            let displayElement = document.getElementById("M");
+
+            if (isChecked) {
+                displayElement.innerHTML = "We will remember your info, brother!";
+            } else {
+                displayElement.innerHTML = "";
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('M').innerHTML = '';
+        }
+
+        function LoginFunction() {
+            let user = document.getElementById("Name").value;
+            let pass = document.getElementById("Passy").value;
+            let displayElement = document.getElementById("M");
+            let loginBtn = document.getElementById("A");
+
+            
+            if (user === "mrbeast67" && pass === "12345678") {
+                alert("Access Granted!");
+                attempt_counter = 0; 
+                displayElement.innerHTML = "Success!";
+                window.location.href = "meow.html";
+            } 
+            else {
+                attempt_counter++;
+                
+                if (attempt_counter >= 3) {
+                    displayElement.style.color = "red";
+                    loginBtn.disabled = true;
+                    alert("Access Denied!");
+                }
+                 else {
+                    displayElement.innerHTML = "Incorrect credentials. Attempt " + attempt_counter + " of 3.";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
