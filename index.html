@@ -36,6 +36,15 @@
             font-weight: bold;
             transition: box-shadow 0.5s;
         }
+        .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: darkblue;
+  color: white;
+  text-align: center;
+}
 
     </style>
 </head>
@@ -65,11 +74,16 @@
         </form>
         <br>
     </div>
+    <div class="footer">
+    <br>
+    <p>Kurt Abellar, Alexander Floro, Darvine Mitchell, Jeremiah Velasco</p>
+    <p>Grade 9-Jade SY: 2025-2026</p>
+</div>
 
     <script>
       
 
-        // start with function
+
 let attempt_counter = 0;
 
 function Kurt(){
@@ -87,8 +101,8 @@ do {
             alert("Yes lets go u win");
             attempt_counter = 0; 
             document.getElementById("M").innerHTML = "";
-            window.location.href = "dashboard.html"; //go to second page
-            break; // stop loop
+            window.location.href = "dashboard.html"; 
+            break;
         } else {
             attempt_counter++;
             document.getElementById("M").innerHTML =
@@ -99,7 +113,7 @@ do {
 
     if (attempt_counter >= 3) {
         alert("locked haha");
-        document.getElementById("A").disabled = true; // lock button
+        document.getElementById("A").disabled = true; 
     }
 }
         
