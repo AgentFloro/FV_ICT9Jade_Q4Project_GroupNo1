@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+<style>
+
+#kudyapi{
+    padding: 40px;
+    width: 500px;
+    height: auto;
+    background-color: lightblue;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px rgb(76, 76, 76);
+    margin: auto;
+}
+body{
+    font-family: Questrial, sans;
+    background: url('https://img.freepik.com/free-vector/blue-wallpaper-with-white-lines_483537-4468.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1, h2{
+    font-family: Funnel Display, sans;
+    text-align: center;
+}
+@media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+      div.content {margin-left: 0;}
+    }
+
+    @media screen and (max-width: 400px) {
+      .sidebar a {
+      text-align: center;
+      float: none;
+    }
+    }
+    .sidebar {
+      margin: 0;
+      padding: 0;
+      width: 150px;
+      background-color: #ffffff;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+      text-align: left;
+
+    }
+  .sidebar a {
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 16px;
+    text-decoration: none;
+    transition: background-color 0.6s;
+  }
+ 
+  .sidebar a.active {
+    background-color: #045faa;
+    color: white;
+  }
+
+  .sidebar a:hover:not(.active) {
+    background-color: #00042c;
+    color: white;
+  }
+  .logo{
+    width: 140px;
+    height: 140px;
+    margin-top: 80px; 
+    margin-bottom: 40px;
+  }
+  #header, #header2{
+    color: white;
+  }
+</style>
+
+</head>
+
+
+
+
+<body>
+
+    <div class="sidebar">
+        <img src="https://images.squarespace-cdn.com/content/v1/664c7ae50eea9c731b37e817/8b5611eb-ff3a-407f-9adc-e116a23373fc/OBMC+LOGO+2024-04.png" alt="logo" class="logo">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#vn">Virtual Notebook</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#vn">Virtual Notebook</a>
+      <a href="#tasks" class="active">Tasks</a>
+      <a href="#prof">Profile</a>
+      <a href="#logout">Logout</a>
+    </div>
+  <br><br>
+
+
+<h1 id="header">Dashboard</h1>
+
+<h2 id="header2"><u>ICT 9 Curriculum</u></h2>
+<br>
+<div class="container" id="kudyapi">
+
+<h1 style="font-size: 20px">First Quarter</h1>
+<ul>
+
+<li>Introduction to HTML</li>
+<li>Basic CSS Styling</li>
+<li>Quarter Project</li>
+
+<br>
+
+</ul>
+
+<h1 style="font-size: 20px">Second Quarter</h1>
+<ul>
+
+<li>Introduction to Bootstrap</li>
+<li>Bootstrap with Forms</li>
+<li>Quarter Project</li>
+
+<br>
+
+</ul>
+
+<h1 style="font-size: 20px">Third Quarter</h1>
+<ul>
+
+<li>Introduction to JavaScript</li>
+<li>JavaScript Datatypes, Operators, and Variables</li>
+<li>JavaScript Fuctions and Events</li>
+<li>Quarter Project</li>
+
+<br>
+
+</ul>
+
+<h1 style="font-size: 20px">Fourth Quarter</h1>
+<ul>
+
+<li>Conditional Statements</li>
+<li>Iteration Statements</li>
+<li>Quarter Project</li>
+
+</ul>
+
+</div>
