@@ -3,45 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Virtual Notebooks</title>
-
+<title>ICT VN</title>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Indie+Flower&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&family=Russo+One&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-
-a, h2, p, option, input{font-family: Questrial, sans;}
 .logo{width: 140px;height: 140px;margin-top: 80px; margin-bottom: 40px;}
-#log{width: 30px;height: 30px;}
-#yes{box-shadow: 0 0 10px 5px rgba(27, 27, 27, 0.5);transition: box-shadow 0.5s;transition: transform 0.6s ease;}
-#yes:hover{box-shadow: 0 0 10px 5px rgba(77, 151, 255, 0.5);transform: translateY(-10px);}
 #header{color: rgb(16, 0, 121);text-align: center;font-family: Funnel Display, sans;text-align: left;}
 
 body{
   background:#e6e6e6;
-  font-family: Arial, sans-serif;
+  font-family: Questrial, sans;
 }
 
-.sidebar{
-  width:150px;
-  background:#001353;
-  position:fixed;
-  height:100%;
-  padding-top:10px;
-}
-.sidebar a{
-  color:white;
-  display:block;
-  padding:14px;
-  text-decoration:none;
-}
-.sidebar a:hover{background:#00042c;}
-.sidebar .active{background:#045faa;}
+@media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+      div.content {margin-left: 0;}
+    }
 
-.logo{
-  width:120px;
-  margin:70px auto 30px;
-  display:block;
-}
+    @media screen and (max-width: 400px) {
+      .sidebar a {
+      text-align: center;
+      float: none;
+    }
+    /*Sources used: 
+    https://www.w3schools.com/cssref/css3_pr_transform.php
+    https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp
+    */
+    }
+    .sidebar {
+      margin: 0;
+      padding: 0;
+      width: 150px;
+      background-color: #ffffff;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+      text-align: left;
+
+    }
+  .sidebar a {
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 16px;
+    text-decoration: none;
+    transition: background-color 0.6s;
+  }
+ 
+  .sidebar a.active {
+    background-color: #045faa;
+    color: white;
+  }
+
+  .sidebar a:hover:not(.active) {
+    background-color: #00042c;
+    color: white;
+  }
 
 .main{
   margin-left:300px;
@@ -50,21 +72,32 @@ body{
 }
 
 .header{
-  background:#737373;
+  background: url('https://img.freepik.com/free-vector/computer-with-big-data-stream-isometric-banner_107791-248.jpg?semt=ais_hybrid&w=740&q=80');
+  background-size: cover;
   color:white;
-  padding:35px;
+  padding: 35px;
+  height: 200px;
   margin-left:150px;
   margin-bottom:50px;
   margin-top:0px;
+  font-family: Funnel Display, sans;
 }
-
 .box{
   background:white;
   padding:18px;
   border-radius:6px;
   margin-bottom:15px;
+  box-shadow: 0 0 4px 5px rgb(206, 206, 206);
 }
-
+#noclass{
+    height: 170px;
+    width: auto;
+}
+#pfp{
+    width: 40px;
+    height: 40px;
+    border-radius: 150px;
+}
 small{color:#666;}
 </style>
 </head>
@@ -73,15 +106,15 @@ small{color:#666;}
 
 <div class="sidebar">
   <img src="https://images.squarespace-cdn.com/content/v1/664c7ae50eea9c731b37e817/8b5611eb-ff3a-407f-9adc-e116a23373fc/OBMC+LOGO+2024-04.png" class="logo">
-  <a href="#">Dashboard</a>
+  <a href="dashboard.html">Dashboard</a>
   <a href="#" class="active">Virtual Notebook</a>
-  <a href="#">Tasks</a>
-  <a href="#">Profile</a>
-  <a href="#">Logout</a>
+  <a href="tasks.html">Tasks</a>
+  <a href="Profile.html">Profile</a>
+  <a href="index.html">Logout</a>
 </div>
 
 <div class="header">
-    <h2>Lorem Ipsum Title</h2>
+    <h2 id="header1"><b>ICT 9-Jade</b></h2>
 </div>
 
 <div class="main">
@@ -91,21 +124,21 @@ small{color:#666;}
     <div class="col-md-8">
 
       <div class="box">
-        <h6>Sir Santos</h6>
-        <small>from next week ago</small>
-
-        <p style="margin-top:10px;"><b>ICT GRADE</b></p>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
+        <div class="row gap-2">
+        <div class="col-md-1"><img src="https://images.icon-icons.com/2643/PNG/512/male_man_person_people_avatar_white_tone_icon_159365.png" alt="" id="pfp"></div>
+        <div class="col-md-8"><h5><b>Renn Santos</b></h5>
+        <small>just now</small>
+        <br><br>
+        <p>Deadline of Submission: <u>May 4, 2026</u></p>
 
         <form onsubmit="return checkFile()">
-          <input type="file" id="fileInput">
+          <input type="file" id="fileInput" class="form-control">
+          <br>
+          <button type="submit" class="btn btn-primary">Submit File</button>
           <br><br>
-          <button type="submit">Submit File</button>
         </form>
-
+        </div>
+        </div>
       </div>
 
     </div>
@@ -115,10 +148,8 @@ small{color:#666;}
       <div class="box text-center">
         <h6>Class Activity</h6>
 
-        <div style="background:green; color:white; padding:10px; border-radius:5px;">
-          ICT<br><br>
-          Project due on May 4
-        </div>
+        <img src="https://img.freepik.com/premium-vector/asian-student-school-uniform-thai-student-girl-is-making-decision-right-wrong-vector-illustration_77116-1874.jpg?w=360" alt="" id="noclass">
+        <h3><b>No Class Activity</b></h3>
 
       </div>
 
