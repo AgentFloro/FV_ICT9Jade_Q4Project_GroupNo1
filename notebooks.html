@@ -100,9 +100,9 @@ body{
   <div id="list">This is the list of your classes</div>
 <br>
   <div class="row" style="margin-left: 50px;">
-    <input class="form-control" value="2025-2026" style="width: 105px;">
-    <input class="form-control" placeholder="Search class name or professor name" id="moveit" style="width: 300px; margin-left: 40px;">
-    <select class="form-control" id="pleasemove" style="width: 200px;">
+    <input class="form-control" value="2025-2026" style="width: 150px; border-color: rgb(255, 217, 0); border-width: 3px; background-color: rgba(131, 164, 255, 0.321); color: rgb(255, 217, 0);">
+    <input class="form-control" placeholder="Search class name or professor name" id="moveit" style="width: 300px; margin-left: 40px; border-color: rgb(255, 217, 0); border-width: 3px; background-color:rgba(131, 164, 255, 0.321); color: rgb(255, 217, 0);">
+    <select class="form-control" id="pleasemove" style="width: 200px; border-color: rgb(255, 217, 0); border-width: 3px; background-color:rgba(131, 164, 255, 0.321); color: rgb(255, 217, 0);">
         <option>Sort by</option>
         <option disabled>Alphabetical A-Z</option>
         <option disabled>Alphabetical Z-A</option>
@@ -120,7 +120,7 @@ body{
         <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>
       <br>
-      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background: url('https://img.freepik.com/free-vector/computer-with-big-data-stream-isometric-banner_107791-248.jpg?semt=ais_hybrid&w=740&q=80');"onclick="openClassfeed()">
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background: url('https://img.freepik.com/free-vector/computer-with-big-data-stream-isometric-banner_107791-248.jpg?semt=ais_hybrid&w=740&q=80');"onclick="opentrueClassfeed()">
         <h2><b>ICT</b></h2>
         <p><b>--</b></p>
         <p>Renn Santos</p>
@@ -210,7 +210,7 @@ body{
       <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://static.vecteezy.com/system/resources/thumbnails/000/694/605/small/abstract-orange-stylish-wave-banner-background.jpg');"onclick="openClassfeed()">
         <h2><b>Homeroom</b></h2>
         <p><b>--</b></p>
-        <p>Jose Marie Macaya</p>
+        <p>Ma. Jillian Talavera</p>
         <br>
         <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>  
@@ -220,6 +220,9 @@ body{
 <script>
   function openClassfeed() {
     alert('Virtual notebook is unavailable at the moment. Please check in once you have been admitted access');
+  }
+  function opentrueClassfeed(){
+    window.location.href="InsideNotebook.html"
   }
 </script>
 
