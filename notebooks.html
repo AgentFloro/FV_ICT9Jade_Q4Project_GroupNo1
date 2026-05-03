@@ -7,12 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Indie+Flower&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&family=Russo+One&display=swap" rel="stylesheet">
     <style>
-    a, h2, p, option, input{font-family: Questrial, sans;}
     .logo{width: 140px;height: 140px;margin-top: 80px; margin-bottom: 40px;}
     #log{width: 30px;height: 30px;}
-    #yes{box-shadow: 0 0 10px 5px rgba(27, 27, 27, 0.5);transition: box-shadow 0.5s;transition: transform 0.6s ease;}
+    #yes{transition: box-shadow 0.5s;transition: transform 0.6s ease;}
     #yes:hover{box-shadow: 0 0 10px 5px rgba(77, 151, 255, 0.5);transform: translateY(-10px);}
-    #header{color: rgb(16, 0, 121);text-align: center;font-family: Funnel Display, sans;text-align: left;}
+    #header{color: rgb(255, 255, 255);text-align: center;font-family: Funnel Display, sans;text-align: left;}
     .container{margin-left: 200px;}
     @media screen and (max-width: 700px) {
     .sidebar {
@@ -29,21 +28,25 @@
       text-align: center;
       float: none;
     }
+    /*Sources used: 
+    https://www.w3schools.com/cssref/css3_pr_transform.php
+    https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp
+    */
     }
     .sidebar {
       margin: 0;
       padding: 0;
       width: 150px;
-      background-color: #001353;
+      background-color: #ffffff;
       position: fixed;
       height: 100%;
       overflow: auto;
       text-align: left;
-    }
 
+    }
   .sidebar a {
     display: block;
-    color: rgb(254, 251, 251);
+    color: rgb(0, 0, 0);
     padding: 16px;
     text-decoration: none;
     transition: background-color 0.6s;
@@ -59,31 +62,22 @@
     color: white;
   }
 
-.input{
-  padding: 10px;
-  background: #e6e7ea;
-  border: none;
-  border-radius: 10px;
-  width: 200px;
-  margin-left: 50px;
-}
 #moveit{
     margin-right: 40px;
 }
 
-#pleasemove{
-    padding: 10px;
-  background: #e6e7ea;
-  border: none;
-  border-radius: 10px;
-  width: 200px;
-}
 
 #list{
     margin-left: 50px;
     font-size: 14px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-weight: bold;
+}
+body{
+    font-family: Questrial, sans;
+    background: url('https://img.freepik.com/free-vector/blue-wallpaper-with-white-lines_483537-4468.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
   </style>
@@ -91,11 +85,11 @@
 <body>
     <div class="sidebar">
       <img src="https://images.squarespace-cdn.com/content/v1/664c7ae50eea9c731b37e817/8b5611eb-ff3a-407f-9adc-e116a23373fc/OBMC+LOGO+2024-04.png" alt="" class="logo">
-      <a href="#home">Dashboard</a>
-      <a href="#news" class="active">Virtual Notebook</a>
-      <a href="#contact">Tasks</a>
-      <a href="#about">Profile</a>
-      <a href="#about">Logout</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="#" class="active">Virtual Notebook</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="profile.html">Profile</a>
+      <a href="index.html">Logout</a>
     </div>
   <br><br>
   <div class="container">
@@ -105,17 +99,16 @@
 
   <div id="list">This is the list of your classes</div>
 <br>
-  <div>
-    <input class="input" value="2025-2026">
-    <input class="input" placeholder="Search class name or professor name" id="moveit">
-    <select class="dropdown" id="pleasemove">
+  <div class="row" style="margin-left: 50px;">
+    <input class="form-control" value="2025-2026" style="width: 105px;">
+    <input class="form-control" placeholder="Search class name or professor name" id="moveit" style="width: 300px; margin-left: 40px;">
+    <select class="form-control" id="pleasemove" style="width: 200px;">
         <option>Sort by</option>
-        <option>Alphabetical A-Z</option>
-        <option>Alphabetical Z-A</option>
+        <option disabled>Alphabetical A-Z</option>
+        <option disabled>Alphabetical Z-A</option>
     </select>
    
   </div>
-
 <br><br>
 
     <div class="row gap-5 justify-content-center" id="taskrow1" style="height: 290px;">
