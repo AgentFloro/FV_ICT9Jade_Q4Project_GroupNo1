@@ -160,13 +160,13 @@
 
         <p>Gender: Male</p>
         <p>Student ID: 3046802894</p>
-        <p>Contact Number: +63 094299758</p>
-        <p>Height: 7,8ft</p>
+        <p>Contact Number: +63 XXXXXXXXXX</p>
+        <p>Height: 7,8</p>
         <p>Email: coolemailaddress@gmail.com</p>
         <p id="pass">Password: DarvineCoolBoy</p>
         <br>
 
-        <button class="btn btn-warning" onclick="changePass()"><b>Change Password</b></button>
+        <button class="btn btn-warning" onclick="changePass()" id="changing"><b>Change Password</b></button>
     </div>
 
 
@@ -198,6 +198,14 @@
                 img.src = event.target.result;
             }
             reader.readAsDataURL(e.target.files[0]);
+        }
+        function changePass(){
+          let password = prompt('Please enter new password', 'DarvineCoolBoy')
+          if (password != null) {
+            document.getElementById('pass').innerHTML="Password: " + password;
+            alert('Your attempts in changing password has been locked for 1 decade.')
+            document.getElementById('changing').disabled = true
+          }
         }
     </script>
 
